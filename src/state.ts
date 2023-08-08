@@ -5,7 +5,7 @@ export const userState = atom<userInfo>({
   key: "user",
   default: {
     id: "12345678",
-    name: "Zalo",
-    avatar: "ZA",
+    name: "Nhien",
+    avatar: "NH",
   },
 });
