@@ -5,6 +5,7 @@ import { userInfo } from "zmp-sdk";
 import { userState } from "../state";
 
 import UserCard from "../components/user-card";
+import ImageSwiper from "../components/image-swiper";
 
 const HomePage: React.FunctionComponent = () => {
   const user = useRecoilValue<userInfo>(userState);

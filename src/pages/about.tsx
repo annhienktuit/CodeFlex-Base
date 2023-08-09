@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Sheet, Button, Page, Text, useNavigate } from "zmp-ui";
 import axios from "axios";
+import ImageSwiper from "../components/image-swiper";
 
 const AboutPage: React.FunctionComponent = (props) => {
   const [actionSheetOpened, setActionSheetOpened] = useState(false);
@@ -25,6 +26,9 @@ const AboutPage: React.FunctionComponent = (props) => {
       <div className="section-container">
         <Text>{apiData}</Text>
       </div>
+      {/* <div className="swiper-container">
+        <ImageSwiper />
+      </div> */}
       <div>
         <Button
           variant="secondary"
