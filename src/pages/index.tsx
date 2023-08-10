@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { List, Page, Icon, useNavigate } from "zmp-ui";
 import { useRecoilValue } from "recoil";
 import { userInfo } from "zmp-sdk";
 import { userState } from "../state";
 
 import UserCard from "../components/user-card";
-import ImageSwiper from "../components/image-swiper";
+import { requestSendNotification } from "zmp-sdk/apis"; // Added import
+
+useEffect(() => {
+  // Request notification permission if not allowed
+  if (Notification.permission !== "granted") {
+    requestSendNotification({
+      success: () => {
+        // Handle successful API call
+      },
+      fail: (error) => {
+        // Handle API call failure
+        console.log(error);
+      },
+    });
+  }
+}, []);
 
 const HomePage: React.FunctionComponent = () => {
   const user = useRecoilValue<userInfo>(userState);
