@@ -7,21 +7,6 @@ import { userState } from "../state";
 import UserCard from "../components/user-card";
 import { requestSendNotification } from "zmp-sdk/apis"; // Added import
 
-useEffect(() => {
-  // Request notification permission if not allowed
-  if (Notification.permission !== "granted") {
-    requestSendNotification({
-      success: () => {
-        // Handle successful API call
-      },
-      fail: (error) => {
-        // Handle API call failure
-        console.log(error);
-      },
-    });
-  }
-}, []);
-
 const HomePage: React.FunctionComponent = () => {
   const user = useRecoilValue<userInfo>(userState);
   const navigate = useNavigate();
